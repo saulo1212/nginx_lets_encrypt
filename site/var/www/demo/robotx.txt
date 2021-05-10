@@ -1,0 +1,3 @@
+# Prevent bots from crawling the demo site.
+User-agent: *
+Disallow: /
