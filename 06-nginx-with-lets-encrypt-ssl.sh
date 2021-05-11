@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# Create the Let's Encrypt / ACME challenge path.
+
+# Crie o caminho  Let's Encrypt / ACME.
 sudo mkdir -p /var/www/letsencrypt/.well-known/acme-challenge
 
-# Copy over the Let's Encrypt SSL enabled build config.
-sudo cp ~/nginx/etc/nginx/sites-available/build-lets-encrypt-ssl.conf \
-     /etc/nginx/sites-available/build.conf
+# Copie a configuração de demonstração do Let's Encrypt SSL habilitado.
+sudo cp nginx/etc/nginx/sites-available/demo-lets-encrypt-ssl.conf \
+     /etc/nginx/sites-available/demo.conf
 
-# Restart nginx because we changed a config file.
+# Restart nginx 
 sudo service nginx restart

@@ -28,7 +28,7 @@ LETS_ENCRYPT_MODE="staging"
 
 
 # Space separated list of domains to register SSL certificates for.
-REGISTER_DOMAINS="test.example.com"
+REGISTER_DOMAINS="ssl.poweratendimento.com.br"
 # Here's an example if you had multiple domains (you could use 1 line too):
 #   REGISTER_DOMAINS="example.com
 #                     www.example.com

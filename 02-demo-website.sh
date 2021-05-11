@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# Remove the default nginx website and associated configs.
+# Remova o site nginx padrão e as configurações associadas.
 sudo rm -rf /var/www/html
 sudo rm -rf /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default \
             /etc/nginx/nginx.conf
 
-# Copy over the demo website and make sure the www-data user owns it.
-sudo cp -r ~/site/var/www/build /var/www
-sudo chown -R www-data:www-data /var/www/build
+# Copie no site de demonstração e certifique-se de que o usuário www-data é o proprietário.
+sudo cp -r site/var/www/demo /var/www
+sudo chown -R www-data:www-data /var/www/demo
 
-# Copy over the build website configs.
-sudo cp ~/nginx/etc/nginx/sites-available/build.conf /etc/nginx/sites-available
-sudo cp ~/nginx/etc/nginx/nginx.conf /etc/nginx
+# Copie as configurações do site de demonstração.
+sudo cp nginx/etc/nginx/sites-available/demo.conf /etc/nginx/sites-available
+sudo cp nginx/etc/nginx/nginx.conf /etc/nginx
 
-# Symlink the build config to activate it.
-sudo ln -s /etc/nginx/sites-available/build.conf /etc/nginx/sites-enabled
+# Crie um link simbólico para a configuração de demonstração para ativá-la.
+sudo ln -s /etc/nginx/sites-available/demo.conf /etc/nginx/sites-enabled
 
-# Restart nginx because we changed the config files.
+# Reinicie o nginx porque alteramos os arquivos de configuração.
 sudo service nginx restart

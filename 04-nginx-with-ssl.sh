@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Copy over the SSL enabled build config.
-sudo cp ~/nginx/etc/nginx/sites-available/build-ssl.conf \
-        /etc/nginx/sites-available/build.conf
+# Copie sobre a configuração de demonstração habilitada para SSL.
+sudo cp nginx/etc/nginx/sites-available/demo-ssl.conf \
+        /etc/nginx/sites-available/demo.conf
 
-# Restart nginx because we changed a config file.
+#Reinicie o nginx porque alteramos um arquivo de configuração.
 sudo service nginx restart
